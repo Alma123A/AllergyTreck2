@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "848823184923",
+    "project_id": "allergytrack2",
+    "storage_bucket": "allergytrack2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848823184923:android:e4267c469bf2a434e312be",
+        "android_client_info": {
+          "package_name": "com.example.allergytrack2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGxoAZqnGthEsNw4sttn1U2DOvDyoTCRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
