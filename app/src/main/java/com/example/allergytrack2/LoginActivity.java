@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.allergytrack2.MainActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -46,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.d("onActivityResult", result.toString());
 
             if (result.getResultCode() == RESULT_OK) {
-                Task<GoogleSignInaccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
+                Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
                 try {
                     GoogleSignInAccount signInAccount = accountTask.getResult(ApiException.class);
                     AuthCredential authCredential = GoogleAuthProvider.getCredential(signInAccount.getIdToken(), null);
@@ -59,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                                 name.setText(auth.getCurrentUser().getDisplayName());
                                 mail.setText(auth.getCurrentUser().getEmail());
                                 Toast.makeText(LoginActivity.this, "Sign in successfully!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
                                 intent.putExtra("USERNAME", auth.getCurrentUser().getDisplayName());
 
                                 startActivity(intent);
@@ -80,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_log_in);
-
+        Log.e("onCreate","onCreate");
         FirebaseApp.initializeApp(this);
         imageView = findViewById(R.id.profileImage);
         name = findViewById(R.id.nameTv);
