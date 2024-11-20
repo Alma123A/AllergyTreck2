@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView name, mail;
     private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
 
+
         public void onActivityResult(ActivityResult result) {
             Log.d("onActivityResult", result.toString());
 
