@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.d("onActivityResult", result.toString());
 
             if (result.getResultCode() == RESULT_OK) {
-                Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
+                Task<GoogleSignInaccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
                 try {
                     GoogleSignInAccount signInAccount = accountTask.getResult(ApiException.class);
                     AuthCredential authCredential = GoogleAuthProvider.getCredential(signInAccount.getIdToken(), null);
@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_log_in);
 
         FirebaseApp.initializeApp(this);
         imageView = findViewById(R.id.profileImage);
