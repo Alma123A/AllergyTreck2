@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         public void onActivityResult(ActivityResult result) {
-            Log.d("onActivityResult", result.toString());
+            Log.e("onActivityResult", result.toString());
 
             if (result.getResultCode() == RESULT_OK) {
                 Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
