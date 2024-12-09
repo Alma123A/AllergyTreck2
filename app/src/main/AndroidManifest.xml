@@ -33,8 +33,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity3"
+        <activity
+            android:name=".MainActivity3"
             android:exported="true"/>
+
     </application>
 
 </manifest>

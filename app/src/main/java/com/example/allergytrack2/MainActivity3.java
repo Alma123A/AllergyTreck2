@@ -12,6 +12,9 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
 
+        // הצגת הודעת Toast
+        Toast.makeText(this, "יצירת מעקב חדש", Toast.LENGTH_SHORT).show();
+
         MaterialButton btnNewTrack = findViewById(R.id.btnNewTrack);
         MaterialButton btnLogin = findViewById(R.id.btnLogin);
 
