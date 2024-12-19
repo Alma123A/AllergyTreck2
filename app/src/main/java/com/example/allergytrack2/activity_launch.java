@@ -7,9 +7,12 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.allergytrack2.databinding.ActivityLaunchBinding;
 
+import java.util.zip.Inflater;
+
 public class LaunchActivity extends AppCompatActivity {
 
-    private ActivityLaunchBinding binding;
+    private int binding;
+    private Inflater ActivityLaunchBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
