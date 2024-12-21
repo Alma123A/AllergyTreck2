@@ -6,119 +6,123 @@
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_primary10">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מעקב אלרגיה חדש"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Date Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"
+        android:hint="תאריך"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Title -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="מעקב אלרגיה חדש"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <!-- Date Input -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dateInputLayout"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dateInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:hint="תאריך"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:layout_constraintTop_toBottomOf="@id/title">
+            android:focusable="false"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dateInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="none"
-                android:focusable="false" />
+    <!-- Allergy Type Dropdown -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/allergyTypeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="סוג האלרגיה"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:layout_constraintTop_toBottomOf="@id/dateInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Allergy Type Dropdown -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/allergyTypeLayout"
+        <AutoCompleteTextView
+            android:id="@+id/allergyTypeDropdown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="סוג האלרגיה"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:layout_constraintTop_toBottomOf="@id/dateInputLayout">
+            android:inputType="none"
+            android:importantForAccessibility="yes"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <AutoCompleteTextView
-                android:id="@+id/allergyTypeDropdown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="none"/>
-        </com.google.android.material.textfield.TextInputLayout>
+    <!-- Symptoms Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/symptomsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="תסמינים"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toBottomOf="@id/allergyTypeLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Symptoms Input -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/symptomsLayout"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/symptomsInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="תסמינים"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:layout_constraintTop_toBottomOf="@id/allergyTypeLayout">
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:gravity="top|start"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/symptomsInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:minLines="3"
-                android:gravity="top|start"/>
-        </com.google.android.material.textfield.TextInputLayout>
+    <!-- Severity Label -->
+    <TextView
+        android:id="@+id/severityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="חומרת התגובה: 0"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/symptomsLayout" />
 
-        <!-- Severity Label -->
-        <TextView
-            android:id="@+id/severityLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="חומרת התגובה: 0"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/symptomsLayout" />
+    <!-- Severity Slider -->
+    <com.google.android.material.slider.Slider
+        android:id="@+id/severitySlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="0"
+        android:valueTo="10"
+        android:stepSize="1"
+        android:layout_marginTop="8dp"
+        app:labelBehavior="floating"
+        app:layout_constraintTop_toBottomOf="@id/severityLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="סליידר לחומרת התגובה, 0 עד 10" />
 
-        <!-- Severity Slider -->
-        <com.google.android.material.slider.Slider
-            android:id="@+id/severitySlider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:valueFrom="0"
-            android:valueTo="10"
-            android:stepSize="1"
-            android:layout_marginTop="8dp"
-            app:labelBehavior="floating"
-            app:layout_constraintTop_toBottomOf="@id/severityLabel"/>
+    <!-- Save Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="שמור מעקב"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        app:cornerRadius="30dp"
+        android:backgroundTint="@color/material_dynamic_primary10"
+        app:layout_constraintTop_toBottomOf="@id/severitySlider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!-- Save Button -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/saveButton"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="שמור מעקב"
-            android:textSize="18sp"
-            android:layout_marginTop="32dp"
-            app:cornerRadius="30dp"
-            android:backgroundTint="@color/material_dynamic_primary10"
-            app:layout_constraintTop_toBottomOf="@id/severitySlider"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

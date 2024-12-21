@@ -3,18 +3,21 @@ plugins{
     id("com.google.gms.google-services")
 }
 
-android{
-    namespace="com.example.allergytrack2"
-    compileSdk=34
+android {
+    namespace = "com.example.allergytrack2"
+    compileSdk = 34
 
-    defaultConfig{
-        applicationId="com.example.allergytrack2"
-        minSdk=24
-        targetSdk=34
-        versionCode=1
-        versionName="1.0"
+    defaultConfig {
+        applicationId = "com.example.allergytrack2"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
 
-        testInstrumentationRunner="androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes{
@@ -46,5 +49,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation ("com.google.android.gms:play-services-auth:20.5.0")
+    implementation ("androidx.appcompat:appcompat:1.6.1")
 
     }
