@@ -50,8 +50,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         app:layout_constraintTop_toBottomOf="@id/dateInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:accessibilityHint="בחר את סוג האלרגיה מתוך הרשימה">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <AutoCompleteTextView
             android:id="@+id/allergyTypeDropdown"
@@ -89,18 +88,21 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Severity Label -->
+
+    <!-- Severity Slider -->
+
     <TextView
         android:id="@+id/severityLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="28dp"
         android:text="חומרת התגובה: 0"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/symptomsLayout" />
 
-    <!-- Severity Slider -->
     <com.google.android.material.slider.Slider
         android:id="@+id/severitySlider"
         android:layout_width="match_parent"

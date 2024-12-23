@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">AllergyTrack2</string>
     <string name="client_id">848823184923-i2kjj8vl0u95ap8uupht6fur2o7dbr1f.apps.googleusercontent.com</string>
+
+    <!-- הוספת משאבים חסרים -->
+    <string name="app_description">תיאור האפליקציה</string>
+    <string name="get_started">התחל</string>
 </resources>

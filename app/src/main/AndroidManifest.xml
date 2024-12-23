@@ -13,20 +13,18 @@
         android:theme="@style/Theme.AllergyTrack2"
         tools:targetApi="31">
 
-        <activity android:name="com.example.allergytrack2.LaunchActivity"
+        <activity
+            android:name="com.example.allergytrack2.LoginActivity"
             android:exported="false" />
 
         <activity
             android:name=".NewTrackActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity2"
             android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+
+        <activity android:name=".LaunchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,11 +32,10 @@
             </intent-filter>
         </activity>
 
-        <!-- Keep only one definition for MainActivity3 -->
+        <!-- MainActivity3 עם שם מלא בלבד -->
         <activity
             android:name="com.example.allergytrack2.MainActivity3"
-            android:exported="true"
-            tools:ignore="DuplicateActivity" />
+            android:exported="false" />
 
     </application>
 
