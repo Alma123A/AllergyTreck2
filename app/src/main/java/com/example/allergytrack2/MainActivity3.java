@@ -16,7 +16,7 @@ public class MainActivity3 extends AppCompatActivity {
         Toast.makeText(this, "יצירת מעקב חדש", Toast.LENGTH_SHORT).show();
 
         MaterialButton btnNewTrack = findViewById(R.id.btnNewTrack);
-        MaterialButton btnLogin = findViewById(R.id.btnLogin);
+        MaterialButton btnLogin = findViewById(R.id.bthLogin);
 
         btnNewTrack.setOnClickListener(v -> {
             // מעבר למסך יצירת מעקב חדש

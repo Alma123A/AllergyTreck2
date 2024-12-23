@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.allergytrack2.databinding.ActivityLaunchBinding;
 
 
-public class LaunchActivity extends AppCompatActivity {
+class LaunchActivity extends AppCompatActivity {
     private ActivityLaunchBinding binding; // Corrected variable name for the binding object
 
     @Override

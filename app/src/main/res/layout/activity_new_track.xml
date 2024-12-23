@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -41,6 +40,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Allergy Type Dropdown -->
+    <!-- Allergy Type Dropdown -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/allergyTypeLayout"
         android:layout_width="match_parent"
@@ -50,17 +50,22 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         app:layout_constraintTop_toBottomOf="@id/dateInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:accessibilityHint="בחר את סוג האלרגיה מתוך הרשימה">
 
         <AutoCompleteTextView
             android:id="@+id/allergyTypeDropdown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none"
+            android:hint="בחר סוג אלרגיה"
             android:importantForAccessibility="yes"
             android:focusable="true"
-            android:focusableInTouchMode="true"/>
+            android:focusableInTouchMode="true"
+            android:inputType="none"
+            android:text="בחר מתוך הרשימה"
+            tools:ignore="ExtraText" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <!-- Symptoms Input -->
     <com.google.android.material.textfield.TextInputLayout

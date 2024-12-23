@@ -71,7 +71,7 @@
 
         <!-- Login Button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogin"
+            android:id="@+id/bthLogin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="כניסה למשתמש קיים"
