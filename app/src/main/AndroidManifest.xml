@@ -32,6 +32,7 @@
             </intent-filter>
         </activity>
 
+
         <!-- MainActivity3 עם שם מלא בלבד -->
         <activity
             android:name="com.example.allergytrack2.MainActivity3"

@@ -1,11 +1,19 @@
 package com.example.allergytrack2;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import com.example.allergytrack2.databinding.ActivityLaunchBinding;
+
 
 
 public class LaunchActivity extends AppCompatActivity {
@@ -14,6 +22,9 @@ public class LaunchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+            EdgeToEdge.enable(this);
+            setContentView(R.layout.activity_launch);
+
 
         // Hide the status bar for a full-screen experience
         getWindow().setFlags(

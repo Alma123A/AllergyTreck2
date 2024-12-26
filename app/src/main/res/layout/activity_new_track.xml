@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_primary10">
+    android:background="@color/black">
 
     <!-- Title -->
     <TextView
@@ -13,7 +13,7 @@
         android:text="מעקב אלרגיה חדש"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="תאריך"
+        android:textColor="@color/white"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +36,7 @@
             android:id="@+id/dateInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:focusable="false"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -57,12 +59,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="בחר סוג אלרגיה"
+            android:textColor="@color/white"
             android:importantForAccessibility="yes"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:inputType="none"
             android:text="בחר מתוך הרשימה"
             tools:ignore="ExtraText" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -73,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="תסמינים"
+        android:textColor="@color/white"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/allergyTypeLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
+            android:textColor="@color/white"
             android:minLines="3"
             android:gravity="top|start"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -98,7 +104,7 @@
         android:layout_marginStart="144dp"
         android:layout_marginTop="28dp"
         android:text="חומרת התגובה: 0"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/symptomsLayout" />
@@ -126,7 +132,8 @@
         android:textSize="18sp"
         android:layout_marginTop="32dp"
         app:cornerRadius="30dp"
-        android:backgroundTint="@color/material_dynamic_primary10"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/severitySlider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
