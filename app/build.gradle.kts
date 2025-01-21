@@ -34,21 +34,22 @@ android {
         targetCompatibility=JavaVersion.VERSION_1_8
     }
 }
-
 dependencies {
-
-
-    implementation(libs.appcompat)
+    implementation(libs.appcompat) // כבר מכיל את appcompat
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.play.services.base)
-    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation("com.github.bumptech.glide:glide:4.16.0")
-    implementation ("com.google.android.gms:play-services-auth:20.5.0")
-    implementation ("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.gms:play-services-auth:20.5.0")
 
-    }
+    // שימוש ב-BOM לניהול גרסאות Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-auth")
+}
+
+
