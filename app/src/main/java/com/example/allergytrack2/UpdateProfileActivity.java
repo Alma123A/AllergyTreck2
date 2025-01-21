@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class UpdateProfileActivity extends AppCompatActivity {
-
+/*
     private EditText editTextName, editTextEmail;
     private Button buttonUpdateProfile;
 
@@ -88,5 +88,5 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 Toast.makeText(this, "Profile update failed", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    } */
 }
