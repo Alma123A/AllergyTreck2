@@ -1,60 +1,57 @@
 package com.example.allergytrack2;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.WindowManager;
+import android.annotation.SuppressLint; // ייבוא של מחלקה המאפשרת השתקת אזהרות בקוד (לא בשימוש בקוד הזה).
+import android.content.Intent; // ייבוא של מחלקת Intent המאפשרת מעבר בין מסכים באפליקציה.
+import android.content.SharedPreferences; // ייבוא של מחלקת SharedPreferences המאפשרת שמירת נתונים מקומיים.
+import android.os.Bundle; // ייבוא של מחלקת Bundle להעברת מידע בין מסכים.
+import android.view.WindowManager; // ייבוא לניהול תכונות חלון, כמו הסתרת סרגל הסטטוס.
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.activity.EdgeToEdge; // מחלקה לניהול ממשק משתמש "מקצה לקצה" (Edge-to-Edge UI).
+import androidx.appcompat.app.AppCompatActivity; // מחלקת הבסיס לפעילויות באפליקציה.
+import androidx.core.graphics.Insets; // ייבוא לניהול שוליים (Insets) – לא בשימוש בקוד.
+import androidx.core.view.ViewCompat; // מחלקת עזר לניהול תצוגות – לא בשימוש בקוד.
+import androidx.core.view.WindowInsetsCompat; // מחלקת עזר לניהול Insetים של חלון – לא בשימוש בקוד.
 
-import com.example.allergytrack2.databinding.ActivityLaunchBinding;
-
-
+import com.example.allergytrack2.databinding.ActivityLaunchBinding; // מחלקת Binding המאפשרת גישה לתצוגות בקובץ ה-XML של המסך.
 
 public class LaunchActivity extends AppCompatActivity {
-    private ActivityLaunchBinding binding; // Corrected variable name for the binding object
+    private ActivityLaunchBinding binding; // משתנה עבור ה-Binding המאפשר גישה לתצוגות במסך.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-            EdgeToEdge.enable(this);
-            setContentView(R.layout.activity_launch);
+        EdgeToEdge.enable(this); // הפעלת ממשק משתמש "מקצה לקצה" למראה חלק יותר.
+        setContentView(R.layout.activity_launch); // קביעת פריסת המסך ל-activity_launch.xml.
 
-
-        // Hide the status bar for a full-screen experience
+        // הסתרת סרגל הסטטוס לחוויית מסך מלא.
         getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
 
-        // Inflate the layout using View Binding
+        // יצירת Binding עבור תצוגות במסך.
         binding = ActivityLaunchBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(binding.getRoot()); // הגדרת פריסת המסך בעזרת ה-Binding.
 
-        // Set up the button click listener
+        // מאזין ללחיצה על כפתור "Get Started" למעבר למסך הראשי.
         binding.getStartedButton.setOnClickListener(view -> navigateToMain());
 
-        // If the user is logged in, navigate to the main screen immediately
+        // בדיקה אם המשתמש מחובר, ואם כן – מעבר למסך הראשי וסיום המסך הנוכחי.
         if (isUserLoggedIn()) {
-            navigateToMain();
-            finish();
+            navigateToMain(); // מעבר למסך הראשי.
+            finish(); // סיום הפעילות הנוכחית כדי למנוע חזרה למסך זה.
         }
     }
 
-    // Check if the user is logged in using SharedPreferences
+    // בדיקה האם המשתמש מחובר באמצעות SharedPreferences.
     private boolean isUserLoggedIn() {
-        SharedPreferences prefs = getSharedPreferences("allergic_track_prefs", MODE_PRIVATE);
-        return prefs.getBoolean("is_logged_in", false);
+        SharedPreferences prefs = getSharedPreferences("allergic_track_prefs", MODE_PRIVATE); // טעינת ההעדפות של האפליקציה.
+        return prefs.getBoolean("is_logged_in", false); // בדיקה אם נשמר ערך "is_logged_in" שהוא true.
     }
 
-    // Navigate to the main activity
+    // מעבר לפעילות הראשית.
     private void navigateToMain() {
-        startActivity(new Intent(this, MainActivity3.class)); // Ensure MainActivity3 exists
-        finish();
+        startActivity(new Intent(this, MainActivity3.class)); // יצירת Intent למעבר ל-MainActivity3 (לוודא שקיים).
+        finish(); // סיום הפעילות הנוכחית לאחר המעבר.
     }
 }

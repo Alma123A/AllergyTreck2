@@ -8,6 +8,9 @@
     tools:context=".MainActivity3">
 
     <!-- Logo Container -->
+    <!-- תמונת פרופיל עגולה באמצעות ShapeableImageView -->
+    <!-- ממוקמת במרכז אופקית עם מרווח עליון של 40sp -->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/logoContainer"
         android:layout_width="120dp"
@@ -17,6 +20,9 @@
         app:cardBackgroundColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <!-- שדה טקסט להצגת שם המשתמש -->
+        <!-- ממוקם מתחת לתמונת הפרופיל עם מרווח של 10sp -->
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,7 +46,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Subtitle -->
+    <!-- שדה טקסט להצגת כתובת המייל -->
+    <!-- ממוקם מתחת לשם המשתמש עם מרווח של 10sp -->
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
@@ -53,6 +60,9 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- New Track Button -->
+    <!-- כפתור התחברות של Google -->
+    <!-- ממוקם בתחתית מתחת למייל עם מרווח של 20sp ורוחב של 200sp -->
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNewTrack"
         android:layout_width="0dp"
