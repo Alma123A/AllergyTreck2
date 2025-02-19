@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                                             userId,
                                             auth.getCurrentUser().getDisplayName(),
                                             auth.getCurrentUser().getEmail()
+
                                     );
 
                                     // שמירת פרטי המשתמש למסד הנתונים.
