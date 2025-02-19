@@ -14,7 +14,11 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.slider.Slider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import android.widget.ArrayAdapter;
 
@@ -36,7 +40,7 @@ public class NewTrackActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_track);
 
         // אתחול רכיבי המסך
-        dateInput = findViewById(R.id.dateInput);
+
         symptomsInput = findViewById(R.id.symptomsInput);
         allergyTypeLayout = findViewById(R.id.allergyTypeLayout);
         allergyTypeDropdown = findViewById(R.id.allergyTypeDropdown);
@@ -66,14 +70,19 @@ public class NewTrackActivity extends AppCompatActivity {
     }
 
     private void saveNewTrack() {
+
+        // יצירת פורמט לתאריך
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+        // קבלת התאריך הנוכחי
+        String currentDate = sdf.format(new Date());
         // קבלת המידע מהשדות
-        String date = dateInput.getText().toString().trim();
-        String symptoms = symptomsInput.getText().toString().trim();
+                        String symptoms = symptomsInput.getText().toString().trim();
         String allergyType = allergyTypeDropdown.getText().toString().trim();
         int severity = (int) severitySlider.getValue();
 
         // בדיקות אם הנתונים ריקים
-        if (date.isEmpty() || symptoms.isEmpty() || allergyType.isEmpty()) {
+        if (currentDate.isEmpty() || symptoms.isEmpty() || allergyType.isEmpty()) {
             Toast.makeText(NewTrackActivity.this, "נא למלא את כל השדות", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -89,7 +98,7 @@ public class NewTrackActivity extends AppCompatActivity {
             // יצירת אובייקט הנתונים
             Map<String, Object> newTrack = new HashMap<>();
             newTrack.put("userId", userId);
-            newTrack.put("date", date);
+            newTrack.put("date", currentDate);
             newTrack.put("symptoms", symptoms);
             newTrack.put("allergyType", allergyType);
             newTrack.put("severity", severity);
