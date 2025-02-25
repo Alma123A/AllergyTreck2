@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- כותרת הדף -->
+    <TextView
+        android:id="@+id/recommendationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="המלצות לטיפול"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- תיבת המלצות עם CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/recommendationCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/recommendationTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp">
+
+        <TextView
+            android:id="@+id/recommendationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="כאן יוצגו ההמלצות בהתאם לחומרת האלרגיה שדיווחת עליה."
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:textColor="@color/black"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- כפתור חזרה למסך הבית -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBackHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="חזרה למסך הבית"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_marginTop="40dp"
+        app:cornerRadius="25dp"
+        app:layout_constraintTop_toBottomOf="@id/recommendationCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

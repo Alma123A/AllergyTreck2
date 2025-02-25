@@ -1,5 +1,6 @@
 package com.example.allergytrack2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -108,14 +109,19 @@ public class NewTrackActivity extends AppCompatActivity {
                 databaseReference.child(userId).child(trackId).setValue(newTrack)
                         .addOnSuccessListener(aVoid -> {
                             Toast.makeText(NewTrackActivity.this, "המעקב נשמר בהצלחה!", Toast.LENGTH_SHORT).show();
-                            finish(); // חזרה לעמוד הקודם
+
+                            // מעבר לעמוד AITreatment
+                            Intent intent = new Intent(NewTrackActivity.this, AITreatment.class);
+                            intent.putExtra("trackId", trackId); // אם יש צורך להעביר מידע נוסף
+                            startActivity(intent);
+
+                            finish(); // סגירת העמוד הנוכחי
                         })
                         .addOnFailureListener(e -> {
                             Toast.makeText(NewTrackActivity.this, "שגיאה בשמירה, נסה שוב", Toast.LENGTH_SHORT).show();
                         });
+            } else {
+                Toast.makeText(NewTrackActivity.this, "לא מחובר למשתמש", Toast.LENGTH_SHORT).show();
             }
-        } else {
-            Toast.makeText(NewTrackActivity.this, "לא מחובר למשתמש", Toast.LENGTH_SHORT).show();
-        }
-    }
-}
+
+        }}}
